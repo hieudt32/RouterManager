@@ -4,10 +4,12 @@ import android.util.Log;
 
 import vn.iotech.base.viper.Presenter;
 import vn.iotech.base.viper.interfaces.ContainerView;
+import vn.iotech.maestrorouter.screen.dashbroad.DashbroadPresenter;
 import vn.iotech.maestrorouter.service.SSHManager;
 import vn.iotech.maestrorouter.service.ServiceBuilder;
 import vn.iotech.utils.NetworkUtils;
 import vn.iotech.utils.StringUtils;
+import vn.iotech.widget.DialogUtils;
 
 /**
  * The Login Presenter
@@ -27,7 +29,8 @@ public class LoginPresenter extends Presenter<LoginContract.View, LoginContract.
 
   @Override
   public void start() {
-    ipAddress = StringUtils.isEmpty(NetworkUtils.getGateway(getViewContext())) ? "192.168.1.1" : ipAddress;
+    ipAddress = NetworkUtils.getGateway(getViewContext());
+    ipAddress = StringUtils.isEmpty(ipAddress) ? "192.168.1.1" : ipAddress;
   }
 
   @Override
@@ -44,11 +47,14 @@ public class LoginPresenter extends Presenter<LoginContract.View, LoginContract.
         Log.d(LoginPresenter.class.getName(), data);
         SSHManager.init(userName, "", ipAddress, "", getViewContext());
         ServiceBuilder.init(SSHManager.getInstance());
+        DialogUtils.dismissProgressDialog();
+        new DashbroadPresenter(mContainerView).pushView();
       }
 
       @Override
       public void onFail() {
         Log.d(LoginPresenter.class.getName(), "fail");
+        DialogUtils.dismissProgressDialog();
       }
     });
   }

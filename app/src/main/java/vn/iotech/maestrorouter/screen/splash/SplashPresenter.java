@@ -1,4 +1,4 @@
-package vn.iotech.maestrorouter.screen.spash;
+package vn.iotech.maestrorouter.screen.splash;
 
 
 import android.os.Handler;
@@ -6,7 +6,6 @@ import android.os.Handler;
 import vn.iotech.base.viper.Presenter;
 import vn.iotech.base.viper.interfaces.ContainerView;
 import vn.iotech.maestrorouter.screen.login.LoginPresenter;
-import vn.iotech.utils.ActivityUtils;
 import vn.iotech.utils.NetworkUtils;
 
 

@@ -55,7 +55,6 @@ public class ServiceBuilder extends AsyncTask<String, Void, String> {
       } else {
         mOnResponseListener.onFail();
       }
-      DialogUtils.dismissProgressDialog();
     }
   }
 

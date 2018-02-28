@@ -1,4 +1,4 @@
-package vn.iotech.maestrorouter.screen.spash;
+package vn.iotech.maestrorouter.screen.splash;
 
 import vn.iotech.base.viper.Interactor;
 

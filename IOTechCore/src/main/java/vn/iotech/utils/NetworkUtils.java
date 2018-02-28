@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.net.DhcpInfo;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -45,12 +46,9 @@ public class NetworkUtils {
   }
 
   public static String getGateway(Context context) {
-    WifiManager wifiMgr = (WifiManager) context.getSystemService(WIFI_SERVICE);
-    assert wifiMgr != null;
-    @SuppressLint("MissingPermission") WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
-    int ipAddress = wifiInfo.getIpAddress();
-    ipAddress = (ByteOrder.nativeOrder().equals(ByteOrder.LITTLE_ENDIAN)) ?
-            Integer.reverseBytes(ipAddress) : ipAddress;
-    return String.valueOf(ipAddress);
+    final WifiManager manager = (WifiManager) context.getApplicationContext().getSystemService(WIFI_SERVICE);
+    assert manager != null;
+    final DhcpInfo dhcp = manager.getDhcpInfo();
+    return Formatter.formatIpAddress(dhcp.gateway);
   }
 }

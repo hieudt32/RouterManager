@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import vn.iotech.base.ContainerActivity;
 import vn.iotech.base.viper.ViewFragment;
-import vn.iotech.maestrorouter.screen.spash.SplashPresenter;
+import vn.iotech.maestrorouter.screen.splash.SplashPresenter;
 
 public class MainActivity extends ContainerActivity {
 

@@ -1,4 +1,4 @@
-package vn.iotech.maestrorouter.screen.spash;
+package vn.iotech.maestrorouter.screen.splash;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,11 +8,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import vn.iotech.Default;
 import vn.iotech.base.viper.ViewFragment;
 import vn.iotech.maestrorouter.R;
 import vn.iotech.utils.ActivityUtils;
-import vn.iotech.widget.DialogUtils;
 
 /**
  * The Splash Fragment
