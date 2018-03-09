@@ -33,7 +33,7 @@ public class SSHManager {
   private Session sesConnection;
   private int intTimeOut;
 
-  public static SSHManager getInstance() {
+  public static SSHManager getInstance()  {
     return sInstance;
   }
 
@@ -47,10 +47,10 @@ public class SSHManager {
                                           String knownHostsFileName, Context context) {
     jschSSHChannel = new JSch();
     try {
-      String path = copyAsset(mContext.getAssets());
-      if (path != null) {
-        jschSSHChannel.addIdentity(path);
-      }
+//      String path = copyAsset(mContext.getAssets());
+//      if (path != null) {
+//        jschSSHChannel.addIdentity(path);
+//      }
       jschSSHChannel.setKnownHosts(knownHostsFileName);
     } catch (JSchException jschX) {
       logError(jschX.getMessage());
@@ -126,7 +126,7 @@ public class SSHManager {
       sesConnection = jschSSHChannel.getSession(strUserName,
               strConnectionIP, intConnectionPort);
       sesConnection.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
-//      sesConnection.setPassword(strPassword);
+      sesConnection.setPassword(strPassword);
       // UNCOMMENT THIS FOR TESTING PURPOSES, BUT DO NOT USE IN PRODUCTION
       java.util.Properties config = new java.util.Properties();
       config.put("StrictHostKeyChecking", "no");
@@ -173,11 +173,8 @@ public class SSHManager {
       }
 
       channel.disconnect();
-    } catch (IOException ioX) {
+    } catch (IOException | JSchException ioX) {
       logWarning(ioX.getMessage());
-      return null;
-    } catch (JSchException jschX) {
-      logWarning(jschX.getMessage());
       return null;
     }
 

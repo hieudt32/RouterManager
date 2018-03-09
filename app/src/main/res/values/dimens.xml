@@ -2,6 +2,7 @@
 <resources>
   <!-- Margin -->
   <dimen name="margin_8dp">8dp</dimen>
+  <dimen name="margin_12dp">12dp</dimen>
   <!-- Padding -->
   <dimen name="padding_5dp">5dp</dimen>
   <!-- Text Size -->

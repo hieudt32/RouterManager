@@ -3,7 +3,6 @@ package vn.iotech.maestrorouter.service;
 import android.os.AsyncTask;
 
 import vn.iotech.utils.StringUtils;
-import vn.iotech.widget.DialogUtils;
 
 /**
  * Created by akai on 2/28/2018.

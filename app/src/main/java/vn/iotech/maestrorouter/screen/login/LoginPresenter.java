@@ -45,7 +45,7 @@ public class LoginPresenter extends Presenter<LoginContract.View, LoginContract.
       @Override
       public void onSuccess(String data) {
         Log.d(LoginPresenter.class.getName(), data);
-        SSHManager.init(userName, "", ipAddress, "", getViewContext());
+        SSHManager.init(userName, "123456789", ipAddress, "", getViewContext());
         ServiceBuilder.init(SSHManager.getInstance());
         DialogUtils.dismissProgressDialog();
         new DashbroadPresenter(mContainerView).pushView();

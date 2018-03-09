@@ -1,5 +1,6 @@
 package vn.iotech.maestrorouter.screen.login;
 
+import android.support.design.widget.TextInputEditText;
 import android.widget.EditText;
 
 import butterknife.BindView;
@@ -13,7 +14,7 @@ import vn.iotech.utils.StringUtils;
  */
 public class LoginFragment extends ViewFragment<LoginContract.Presenter> implements LoginContract.View {
   @BindView(R.id.user_name_et)
-  EditText mUserNameEt;
+  TextInputEditText mUserNameEt;
 
   @OnClick(R.id.login_bt)
   void doLoginClick() {
