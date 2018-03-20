@@ -1,34 +1,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:background="@color/colorWhite"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@color/colorWhite">
 
+  <vn.iotech.widget.RippleBackground
+    android:id="@+id/login_ripple"
+    android:layout_width="match_parent"
+    app:rb_color="#0099CC"
+    app:rb_radius="@dimen/size_32dp"
+    app:rb_rippleAmount="6"
+    app:rb_duration="3000"
+    app:rb_scale="6"
+    android:layout_height="match_parent">
 
-  <android.support.design.widget.TextInputLayout
-    android:id="@+id/user_name_input"
-    style="@style/LayoutMathParentWidth"
-    android:layout_centerInParent="true"
-    android:layout_margin="@dimen/margin_8dp"
-    android:padding="@dimen/padding_5dp">
-
-    <android.support.design.widget.TextInputEditText
-      android:id="@+id/user_name_et"
-      style="@style/LayoutMathParentWidth"
-      android:imeOptions="actionDone"
-      android:inputType="text"
-      android:hint="@string/user_name" />
-  </android.support.design.widget.TextInputLayout>
-
-  <ImageView
-    style="@style/LayoutWrapContent"
-    android:src="@drawable/logo"
-    android:layout_marginBottom="@dimen/margin_8dp"
-    android:layout_above="@id/user_name_input"/>
-  <Button
-    android:id="@+id/login_bt"
-    style="@style/ButtonBase"
-    android:layout_below="@id/user_name_input"
-    android:layout_centerHorizontal="true"
-    android:text="@string/login" />
+    <ImageView
+      android:id="@+id/login_iv"
+      android:layout_width="@dimen/size_48dp"
+      android:layout_height="@dimen/size_48dp"
+      android:layout_centerInParent="true"
+      android:src="@mipmap/ic_launcher_round" />
+  </vn.iotech.widget.RippleBackground>
 </RelativeLayout>

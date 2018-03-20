@@ -14,9 +14,4 @@ class LoginInteractor extends Interactor<LoginContract.Presenter>
     super(presenter);
   }
 
-  @Override
-  public void login(String userName, String ipAddress, ServiceBuilder.OnResponseListener responseListener) {
-    SSHManager sshManager = new SSHManager(userName, "", ipAddress, "", mPresenter.getViewContext());
-    new ServiceBuilder(sshManager).setOnResponseListener(responseListener).execute("");
-  }
 }

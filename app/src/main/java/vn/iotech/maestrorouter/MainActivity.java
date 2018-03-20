@@ -21,6 +21,6 @@ public class MainActivity extends ContainerActivity {
   @Override
   public void onBackPressed() {
     super.onBackPressed();
-
+    this.back(1);
   }
 }

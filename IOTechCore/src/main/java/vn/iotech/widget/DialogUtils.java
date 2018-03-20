@@ -153,9 +153,6 @@ public class DialogUtils {
       }
       sProgress = ProgressDialog.show(context, "", context.getString(R.string.loading),
               true, false);
-//            sProgress = new ProgressDialog(context);
-//            sProgress.show();
-//            sProgress.setMessage(context.getString(R.string.loading));
     } catch (Exception e) {
       e.printStackTrace();
     }

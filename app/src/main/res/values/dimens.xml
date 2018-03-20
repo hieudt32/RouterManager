@@ -3,6 +3,9 @@
   <!-- Margin -->
   <dimen name="margin_8dp">8dp</dimen>
   <dimen name="margin_12dp">12dp</dimen>
+  <!-- Size -->
+  <dimen name="size_48dp">48dp</dimen>
+  <dimen name="size_32dp">32dp</dimen>
   <!-- Padding -->
   <dimen name="padding_5dp">5dp</dimen>
   <!-- Text Size -->

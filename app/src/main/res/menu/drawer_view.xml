@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_dashboard"
+      android:title="@string/dashboard" />
+    <item
+      android:id="@+id/nav_quick_setup"
+      android:title="@string/quick_setup" />
+    <item
+      android:id="@+id/nav_connected_device"
+      android:title="@string/connected_device" />
+  </group>
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_network"
+      android:title="@string/network" />
+    <item
+      android:id="@+id/nav_wifi_setting"
+      android:title="@string/wifi_setting" />
+    <item
+      android:id="@+id/nav_vpn_setting"
+      android:title="@string/vpn_setting" />
+  </group>
+
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_change_password"
+      android:title="@string/network" />
+    <item
+      android:id="@+id/nav_time_zone"
+      android:title="@string/wifi_setting" />
+
+  </group>
+</menu>

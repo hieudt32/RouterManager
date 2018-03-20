@@ -1,28 +1,21 @@
 package vn.iotech.maestrorouter.screen.login;
 
-import android.support.design.widget.TextInputEditText;
-import android.widget.EditText;
+import android.os.Handler;
+import android.widget.ImageView;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import vn.iotech.base.viper.ViewFragment;
 import vn.iotech.maestrorouter.R;
-import vn.iotech.utils.StringUtils;
+import vn.iotech.widget.RippleBackground;
 
 /**
  * The Login Fragment
  */
 public class LoginFragment extends ViewFragment<LoginContract.Presenter> implements LoginContract.View {
-  @BindView(R.id.user_name_et)
-  TextInputEditText mUserNameEt;
-
-  @OnClick(R.id.login_bt)
-  void doLoginClick() {
-    String userName = mUserNameEt.getText().toString();
-    if (!StringUtils.isEmpty(userName)) {
-      mPresenter.login(userName);
-    }
-  }
+  @BindView(R.id.login_iv)
+  ImageView mLoginIv;
+  @BindView(R.id.login_ripple)
+  RippleBackground mRipple;
 
   public static LoginFragment getInstance() {
     return new LoginFragment();
@@ -36,5 +29,13 @@ public class LoginFragment extends ViewFragment<LoginContract.Presenter> impleme
   @Override
   public void initLayout() {
     super.initLayout();
+    mRipple.startRippleAnimation();
+    new Handler().postDelayed(new Runnable() {
+      @Override
+      public void run() {
+        mRipple.stopRippleAnimation();
+        mPresenter.goToMainScreen();
+      }
+    },4000);
   }
 }

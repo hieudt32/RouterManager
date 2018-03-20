@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * SSHManager
  * Created by akai on 2/28/2018.
  */
 
@@ -33,7 +34,7 @@ public class SSHManager {
   private Session sesConnection;
   private int intTimeOut;
 
-  public static SSHManager getInstance()  {
+  public static SSHManager getInstance() {
     return sInstance;
   }
 
@@ -182,6 +183,12 @@ public class SSHManager {
   }
 
   public void close() {
-    sesConnection.disconnect();
+    if (sesConnection != null && sesConnection.isConnected()) {
+      sesConnection.disconnect();
+    }
+  }
+
+  public boolean isConnect() {
+    return sesConnection.isConnected();
   }
 }

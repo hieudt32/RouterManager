@@ -16,5 +16,10 @@ interface MainContract {
   }
 
   interface Presenter extends IPresenter<View, Interactor> {
+    vn.iotech.base.viper.Presenter getTab(int tabId);
+
+    void goToQuickSetup();
+
+    String getTitle(int tabId);
   }
 }
